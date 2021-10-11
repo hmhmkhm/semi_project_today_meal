@@ -1,0 +1,130 @@
+@charset "UTF-8";
+.emailOuter{
+    width: 500;
+    height: 500;
+}
+.emailHeader{
+    position: relative;
+    width: 400px;
+    height: 60px;
+    left: 50px;
+    top: 0px;
+}
+.emailHeader h1{
+    font-family: Noto Sans KR;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 34px;
+    line-height: 49px;
+    align-items: center;
+    text-align: center;
+    letter-spacing: -0.02em;
+    color: #406300;
+}
+.emailForm{
+    position: relative;
+    width: 300px;
+    height: 380px;
+    left: 50px;
+    top: 15px;
+    padding-top: 30px;
+}
+.emailForm h4{
+    font-family: Noto Sans KR;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 23px;
+    display: flex;
+    align-items: center;
+    letter-spacing: -0.02em;
+}
+
+.input_area {
+    display: inline-block;
+    width: 300px;
+    height: 40px;
+    left: 0px;
+    top: 70px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+
+    border: 1px solid #000000;
+    box-sizing: border-box;
+    
+}
+.inputDisableType{
+	background-color: #ebebeb;
+}
+.input_area2{
+    display: inline-block;
+    width: 220px;
+    height: 40px;
+    left: 0px;
+    top: 70px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+
+    border: 1px solid #000000;
+    box-sizing: border-box;
+}	
+.input_area input{
+	width : 250px;
+	height : 30px;
+	border: 0px;
+    margin : 5px 25px 5px 25px;
+    
+}
+.input_area2 input{
+	width : 170px;
+	height : 30px;
+	border: 0px;
+       margin : 5px 25px 5px 25px;
+}    
+.btnArea {
+	text-align:center;
+	padding : 30px;
+}
+   #checkEmailBtn {
+       position: absolute;
+       width: 68px;
+       height: 40px;
+       left: 232px;
+       top: 145px;
+		cursor: pointer;
+       background-color: #A1AD61;
+       color: white;
+       border-width: 0px;
+       border-radius: 7px;
+       cursor: pointer;
+       font-family: Noto Sans KR;
+       font-style: normal;
+       font-weight: normal;
+       font-size: 12px;
+       line-height: 100%;
+
+       align-items: flex-start;
+       text-align: center;
+       letter-spacing: -0.5px;
+       text-transform: capitalize;
+}    
+   #updateEmailBtn {
+       width: 68px;
+       height: 32px;
+       
+       background-color: #A1AD61;
+       color: white;
+       border-width: 0px;
+       border-radius: 7px;
+       cursor: pointer;
+       font-family: Noto Sans KR;
+       font-style: normal;
+       font-weight: normal;
+       font-size: 12px;
+       line-height: 100%;
+		cursor: pointer;
+       align-items: center;
+       text-align: center;
+       letter-spacing: -0.5px;
+       text-transform: capitalize;
+}

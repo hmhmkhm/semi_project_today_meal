@@ -1,0 +1,515 @@
+@charset "UTF-8";
+
+html, body { height:100%; } 
+
+body { font-family: 'Noto Sans KR', sans-serif; }
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    /* font-family: 'Noto Sans KR', sans-serif; */
+    /* padding: 0 4%; */
+}
+
+#pageTitle {
+    text-align: center; 
+    font-size: 20px;
+    font-style: normal;
+    font-weight: bold;
+    margin-top: 124px;
+}
+
+.productImage {
+    width: 500px;
+    height: 500px;
+    margin-top: 42px;
+}
+
+.productWrapper1 {
+    margin-top: -520px;
+    margin-left: 52.77%;
+}
+
+.productName {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 34px;
+    line-height: 49px;
+    margin-top: 18px;
+}
+
+#productPrice {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 29px;
+}
+
+.productWeight {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 29px;
+    color: #b9b9b9;
+}
+
+.productWeight_1 {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 29px;
+    margin-left: 11px;
+}
+
+.productStorage {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 29px;
+    color: #b9b9b9;
+}
+
+.productStorage_1 {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 29px;
+    margin-left: 15px;
+}
+
+.grayLine {
+    margin-top: 10px;
+}
+
+#optChangeBtn {
+    background-color: #a1ad61;
+    color: white;
+    width: 93px;
+    height: 40px;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 28px;
+    margin-top: 5%;
+    /* background: inherit; */
+    border:none;
+    box-shadow:none;
+    border-radius:7px;
+    padding:0;
+    overflow:visible;
+    cursor:pointer;
+    
+}
+
+.plusImage {
+    margin-left: 110px;
+    margin-top: -33px;
+}
+
+.optSelected {
+    margin-top: -50px;
+    margin-left: 150px;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 20px;
+}
+
+.optSelPrice {
+    margin-top: -60px;
+    margin-left: 460px;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 20px;
+}
+
+#dateSelectBtn {
+    background-color: #a1ad61;
+    color: white;
+    width: 93px;
+    height: 40px;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 28px;
+    margin-top: 5%;
+    /* background: inherit; */
+    border:none;
+    box-shadow:none;
+    border-radius:7px;
+    padding:0;
+    overflow:visible;
+    cursor:pointer;
+}
+
+#expectedDate {
+    margin-top: -35px;
+    margin-left: 150px;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 19px;
+    line-height: 28px;
+}
+
+#expressInfo {
+    margin-top: 14px;
+    margin-left: 311px;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 17px;
+    color: rgba(0, 0, 0, 0.7);
+    opacity: 0.6;
+}
+
+.grayLine_1 {
+    position: absolute;
+    top: 603px;
+}
+
+#buyQuantity {
+    margin-top: 28px;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 23px;
+}
+
+/* -/+ 버튼*/
+
+.buyQuanBtn {
+    margin-top: -21px;
+    margin-left: 85px;
+}
+
+.minusBtn {
+    width: 26px;
+    height: 26px;
+    border: 1px solid #767676;
+    color: #767676;
+    background-color: white;
+    font-size: 18px;
+    font-weight: normal;
+    font-style: normal;
+    cursor:pointer;
+}
+
+.inputNum {
+    width: 40px;
+    height: 23.55px;
+    border: 1px solid #767676;
+    font-size: 18px;
+    margin-top: -2px;
+    margin-left: -1px;
+    text-align: center;
+}
+
+.plusBtn {
+    width: 26px;
+    height: 26px;
+    border: 1px solid #767676;
+    color: #767676;
+    background-color: white;
+    margin-left: 0.5px;
+    font-size: 18px;
+    font-weight: normal;
+    font-style: normal;
+    margin-left: -1px;
+    cursor:pointer;
+}
+
+#priceInfo {
+    margin-top: -30px;
+    margin-left: 260px;
+}
+
+#totalPrice {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+}
+
+#visiblePrice {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.grayLine_2 {
+    position: absolute;
+    top: 680px;
+}
+
+#buttonGroup {
+    margin-top: 40px;
+    margin-left: 290px;
+}
+
+#basketBtn {
+    background-color: #a1ad61;
+    color: white;
+    width: 105px;
+    height: 40px;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 20px;
+    margin-top: 2px;
+    /* background: inherit; */
+    border:none;
+    box-shadow:none;
+    border-radius:7px;
+    padding:0;
+    overflow:visible;
+    cursor:pointer;
+}
+
+#purchaseBtn {
+    background-color: #294401;
+    color: white;
+    width: 105px;
+    height: 40px;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 20px;
+    margin-top: 2px;
+    /* background: inherit; */
+    border:none;
+    box-shadow:none;
+    border-radius:7px;
+    padding:0;
+    overflow:visible;
+    cursor:pointer;
+    margin-left: 8px;
+}
+
+/* 재료 변경 modal 부분 */
+
+.modalWrapper1{
+    display: none;
+    width: 381px;
+    height: 427px;
+    position: absolute;
+    top:382px;
+    left: 50%;
+    transform:translate(-50%, -50%);
+    background:#ffffff;
+    z-index: 2;
+}
+.modalBg{
+    display: none;
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100vh;
+    background-color:#000000;
+    opacity: 0.7;
+    top:0;
+    left: 0;
+    z-index: 1;
+}
+
+#optModalCloseBtn {
+    width: 23px;
+    height: 23px;
+    color: black;
+    background-color: #ffffff;
+    position: absolute;
+    font-size: 23px;
+    top: 3px;
+    left: 350px;
+    border:none;
+    cursor:pointer;
+}
+
+.opt1 {
+    margin-top: 63px;
+    margin-left: 52px;
+}
+
+.opt1_1 {
+    font-size: 19px;
+    line-height: 28px;
+    letter-spacing: -0.02em;
+}
+
+.buyQuanBtn1 {
+    margin-left: 55px;
+}
+
+.opt2 {
+    margin-top: 50px;
+    margin-left: 52px;
+}
+
+.opt2_1 {
+    font-size: 19px;
+    line-height: 28px;
+    letter-spacing: -0.02em;
+}
+
+.opt3 {
+    margin-top: 50px;
+    margin-left: 52px;
+}
+
+.opt3_1 {
+    font-size: 19px;
+    line-height: 28px;
+    letter-spacing: -0.02em;
+}
+
+.opt4 {
+    margin-top: 50px;
+    margin-left: 52px;
+}
+
+.opt4_1 {
+    font-size: 19px;
+    line-height: 28px;
+    letter-spacing: -0.02em;
+}
+
+#optBtnGroup {
+    margin-top: 35px;
+    margin-left: 98px;
+}
+
+#cancelBtn1 {
+    background-color: #a1ad61;
+    color: white;
+    width: 88px;
+    height: 30px;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 20px;
+    margin-top: 2px;
+    /* background: inherit; */
+    border:none;
+    box-shadow:none;
+    border-radius:7px;
+    padding:0;
+    overflow:visible;
+    cursor:pointer;
+}
+
+#confirmBtn {
+    background-color: #294401;
+    color: white;
+    width: 88px;
+    height: 30px;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 20px;
+    margin-top: 2px;
+    /* background: inherit; */
+    border:none;
+    box-shadow:none;
+    border-radius:7px;
+    padding:0;
+    overflow:visible;
+    cursor:pointer;
+    margin-left: 8px;
+}
+
+/* 날짜 선택 modal 부분 */
+
+.modalWrapper2{
+    display: none;
+    width: 381px;
+    height: 427px;
+    position: absolute;
+    top:382px;
+    left: 50%;
+    transform:translate(-50%, -50%);
+    background:#ffffff;
+    z-index: 2;
+}
+.modalBg{
+    display: none;
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100vh;
+    background-color:#000000;
+    opacity: 0.7;
+    top:0;
+    left: 0;
+    z-index: 1;
+}
+
+#dateModalCloseBtn {
+    width: 23px;
+    height: 23px;
+    color: black;
+    background-color: #ffffff;
+    position: absolute;
+    font-size: 23px;
+    top: 3px;
+    left: 350px;
+    border:none;
+    cursor:pointer;
+}
+
+.topText {
+    margin-top: 18px;
+    margin-left: 19px;
+}
+
+.selectableDate {
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: -0.02em;
+}
+
+.block {
+    width: 16px;
+    height: 16px;
+    border: none;
+    display: block;
+    background: #a1ad61;
+    margin-top: -18px;
+    margin-left: 152px;
+}
+
+
+#dateBtnGroup {
+    margin-top: 35px;
+    margin-left: 98px;
+}
+
+#cancelBtn2 {
+    background-color: #a1ad61;
+    color: white;
+    width: 88px;
+    height: 30px;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 20px;
+    margin-top: 2px;
+    /* background: inherit; */
+    border:none;
+    box-shadow:none;
+    border-radius:7px;
+    padding:0;
+    overflow:visible;
+    cursor:pointer;
+}
+
+#confirmBtn {
+    background-color: #294401;
+    color: white;
+    width: 88px;
+    height: 30px;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 20px;
+    margin-top: 2px;
+    /* background: inherit; */
+    border:none;
+    box-shadow:none;
+    border-radius:7px;
+    padding:0;
+    overflow:visible;
+    cursor:pointer;
+    margin-left: 8px;
+}
+

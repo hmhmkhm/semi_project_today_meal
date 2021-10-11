@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+	<entry key="listCount">
+        SELECT
+		       COUNT(REVIEW_NO)
+		  FROM PRODUCT P
+		  JOIN REVIEW ON(P.PRODUCT_NO = REVIEW.PRODUCT_NO)
+		 WHERE REVIEW.STATUS = 'Y'
+		   AND REVIEW_TEXT LIKE '%KEYWORD%' OR PRODUCT_NAME LIKE '%KEYWORD%'
+	</entry>
+	<entry key="categoryListTotalCount">
+		SELECT
+		       COUNT(REVIEW_NO)
+		  FROM PRODUCT P
+		  JOIN REVIEW ON(P.PRODUCT_NO = REVIEW.PRODUCT_NO)
+		 WHERE CATEGORY_NO IN (CATEGORY_NO_ARRAY)
+		   AND REVIEW.STATUS = 'Y'
+		   AND REVIEW_TEXT LIKE '%KEYWORD%' OR PRODUCT_NAME LIKE '%KEYWORD%'
+	</entry>
+	<entry key="categoryListCount">
+       SELECT
+		       CATEGORY_NO
+		     , COUNT(REVIEW_NO)
+		  FROM PRODUCT P
+		  JOIN REVIEW ON(P.PRODUCT_NO = REVIEW.PRODUCT_NO)
+		 WHERE CATEGORY_NO IN (CATEGORY_NO_ARRAY)
+		   AND REVIEW.STATUS = 'Y'
+		   AND REVIEW_TEXT LIKE '%KEYWORD%' OR PRODUCT_NAME LIKE '%KEYWORD%'
+		 GROUP BY CATEGORY_NO
+	</entry>
+	<entry key="selectList">
+		SELECT 
+	            REVIEW_NO
+	          , PRODUCT_NAME
+	          , REVIEW_IMAGE
+	          , POINT
+	          , ORDER_SUM
+	          , PRODUCT_IMG
+	          , PRODUCT_BUY_QUANTITY
+	          , PRODUCT_INVENTORY_QUANTITY
+	          , OPTION_NAME
+	          , OPTION_BUY_QUANTITY
+	          , OPTION_INVENTORY_QUANTITY
+	       FROM REVIEW_INFORMATION
+	      WHERE REVIEW_NO IN (SELECT REVIEW_NO
+	                            FROM (SELECT ROWNUM RNUM, R.*
+	                                    FROM (SELECT REVIEW.REVIEW_NO
+	                                    		   , NVL(REVIEW_COUNT, 0) REVIEW_COUNT
+	                                            FROM REVIEW
+	                                            JOIN PRODUCT USING(PRODUCT_NO)
+	                                            JOIN RECEIPT USING(ORDER_NO)
+	                                            LEFT OUTER JOIN (SELECT
+										                                REVIEW_NO
+										                              , COUNT(*) REVIEW_COUNT
+										                           FROM LIKE_MANAGEMENT
+										                          GROUP BY REVIEW_NO) REVIEW_COUNT ON(REVIEW.REVIEW_NO = REVIEW_COUNT.REVIEW_NO)
+	                                           WHERE REVIEW.STATUS = 'Y'
+	                                             AND CATEGORY_NO IN (CATEGORY_NO_ARRAY)
+	                                             AND REVIEW_TEXT LIKE '%KEYWORD%' OR PRODUCT_NAME LIKE '%KEYWORD%'
+	                                           ORDER BY ORDER_STATUS) R)
+	                           WHERE RNUM BETWEEN ? AND ?)
+	     ORDER BY ORDER_STATUS, REVIEW_NO DESC
+	</entry>
+	<entry key="selectListJoinLikeManagement">
+		SELECT 
+	            REVIEW_INFORMATION.REVIEW_NO
+		      , PRODUCT_NAME
+		      , REVIEW_IMAGE
+		      , POINT
+		      , ORDER_SUM
+		      , PRODUCT_IMG
+		      , PRODUCT_BUY_QUANTITY
+		      , PRODUCT_INVENTORY_QUANTITY
+		      , OPTION_NAME
+		      , OPTION_BUY_QUANTITY
+		      , OPTION_INVENTORY_QUANTITY
+		      , REVIEW_COUNT
+		      , CASE
+		            WHEN LIKED.REVIEW_NO IS NULL THEN 'N'
+		            ELSE 'Y'
+		        END LIKED
+	       FROM REVIEW_INFORMATION
+	       LEFT OUTER JOIN (SELECT REVIEW_NO FROM LIKE_MANAGEMENT WHERE USER_NO = ?) LIKED ON(LIKED.REVIEW_NO = REVIEW_INFORMATION.REVIEW_NO)
+	      WHERE REVIEW_INFORMATION.REVIEW_NO IN (SELECT REVIEW_NO
+	                            FROM (SELECT ROWNUM RNUM, R.*
+	                                    FROM (SELECT REVIEW.REVIEW_NO
+	                                    		   , NVL(REVIEW_COUNT, 0) REVIEW_COUNT
+	                                            FROM REVIEW
+	                                            JOIN PRODUCT USING(PRODUCT_NO)
+	                                            JOIN RECEIPT USING(ORDER_NO)
+	                                            LEFT OUTER JOIN (SELECT
+										                                REVIEW_NO
+										                              , COUNT(*) REVIEW_COUNT
+										                           FROM LIKE_MANAGEMENT
+										                          GROUP BY REVIEW_NO) REVIEW_COUNT ON(REVIEW.REVIEW_NO = REVIEW_COUNT.REVIEW_NO)
+	                                           WHERE REVIEW.STATUS = 'Y'
+	                                             AND CATEGORY_NO IN (CATEGORY_NO_ARRAY)
+	                                             AND REVIEW_TEXT LIKE '%KEYWORD%' OR PRODUCT_NAME LIKE '%KEYWORD%'
+	                                           ORDER BY ORDER_STATUS) R)
+	                           WHERE RNUM BETWEEN ? AND ?)
+	     ORDER BY ORDER_STATUS, REVIEW_NO DESC
+	</entry>
+	<entry key="selectReview">
+		SELECT
+	           REVIEW_NO
+	         , POINT
+ 	         , REVIEW_TEXT
+ 	         , REVIEW_IMAGE
+ 	         , REVIEW_REGISTER
+	         , USER_ID
+	         , PRODUCT_NAME
+	         , ORDER_SUM
+	         , PRODUCT_IMG
+	         , PRODUCT_BUY_QUANTITY
+	         , PRODUCT_INVENTORY_QUANTITY
+	         , OPTION_NAME
+	         , OPTION_BUY_QUANTITY
+	         , OPTION_INVENTORY_QUANTITY
+	         , REVIEW_COUNT
+	      FROM REVIEW_INFORMATION
+	     WHERE REVIEW_NO = ?
+	</entry>
+	<entry key="selectReviewJoinLikeManagement">
+		SELECT
+	           REVIEW_INFORMATION.REVIEW_NO
+	         , POINT
+	         , REVIEW_TEXT
+	         , REVIEW_IMAGE
+	         , REVIEW_REGISTER
+	         , USER_ID
+	         , PRODUCT_NAME
+	         , ORDER_SUM
+	         , PRODUCT_IMG
+	         , PRODUCT_BUY_QUANTITY
+	         , PRODUCT_INVENTORY_QUANTITY
+	         , OPTION_NAME
+	         , OPTION_BUY_QUANTITY
+	         , OPTION_INVENTORY_QUANTITY
+	         , REVIEW_COUNT
+	         , CASE
+	            WHEN LIKED.REVIEW_NO IS NULL THEN 'N'
+	            ELSE 'Y'
+	        END LIKED
+	      FROM REVIEW_INFORMATION
+	      LEFT OUTER JOIN (SELECT REVIEW_NO FROM LIKE_MANAGEMENT WHERE USER_NO = ?) LIKED ON(LIKED.REVIEW_NO = REVIEW_INFORMATION.REVIEW_NO)
+	     WHERE REVIEW_INFORMATION.REVIEW_NO = ?
+	</entry>
+</properties>

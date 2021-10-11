@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM
+"http://java.sun.com/dtd/properties.dtd">
+<properties>
+<entry key="insertReview">
+	INSERT
+		INTO review 
+		(
+			review_no,
+			point,
+			review_text,
+			review_image,
+			review_register,
+			user_no,
+			product_no,
+			order_no,
+			status
+		)
+		VALUES
+		(
+			SEQ_RNO.NEXTVAL,
+			?,
+			?,
+			?,
+			SYSDATE,
+			?,
+			?,
+			?,
+			DEFAULT
+		)
+</entry>
+<entry key="selectList">
+	SELECT
+		review_no,
+		point,
+		review_text,
+		review_image,
+		review_register,
+		user_no,
+		status
+	FROM review
+	WHERE STATUS = 'Y'
+	AND product_no = ?
+	ORDER BY review_register DESC
+	</entry>
+	<entry key="selectMyReviewList">
+	SELECT
+		review_no,
+		point,
+		review_text,
+		review_image,
+		review_register,
+		user_no,
+		status
+	FROM review
+	WHERE STATUS = 'Y'
+	AND user_no = 21
+	ORDER BY review_register DESC
+	</entry>
+	<entry key="updateReview">
+		UPDATE review
+		SET review_text = ?,
+			review_image = ?
+		WHERE review_no = ?
+	</entry>
+	<entry key="deleteReview">
+		UPDATE review
+		SET STATUS = 'N'
+		WHERE review_no = ?
+	</entry>
+	<entry key="selectReviewPoint">
+		SELECT
+			review_no,
+			point,
+			review_text,
+			review_image,
+			review_register,
+			user_no,
+			product_no,
+			order_no,
+			status
+		FROM review
+		WHERE STATUS = 'Y'
+		AND product_no = 1 AND order_no = 1
+		ORDER BY point DESC
+	</entry>
+	<entry key="selectMypageReview">
+		SELECT
+			review_no,
+			point,
+			review_text,
+			review_image,
+			review_register,
+			P.product_name,
+			user_no,
+			R.product_no,
+			R.order_no,
+			R.status
+		FROM review R
+		JOIN PRODUCT P ON  (P.product_no = R.PRODUCT_NO)
+		WHERE R.STATUS = 'Y'
+		AND USER_NO = ?
+		ORDER BY review_register DESC
+	</entry>
+	<entry key="selectMyReviewProductList">
+		SELECT
+			review_no,
+			point,
+			review_text,
+			review_image,
+			review_register,
+			user_no,
+			R.product_no,
+			R.order_no,
+			R.status
+		FROM review R
+		WHERE R.STATUS = 'Y'
+		AND USER_NO = ?
+		ORDER BY review_register DESC
+	</entry>
+	
+	<entry key="selectMyReviewListTest">
+	SELECT
+              REVIEW_NO
+            , POINT
+            , REVIEW_TEXT
+            , REVIEW_IMAGE
+            , REVIEW_REGISTER
+            , USER_NO
+            , ORDER_NO
+            , R.STATUS
+            , PRODUCT_NAME
+  FROM REVIEW  R
+  JOIN PRODUCT USING(PRODUCT_NO)
+  WHERE USER_NO = ?
+  AND R.STATUS = 'Y'
+  ORDER BY REVIEW_REGISTER DESC
+	</entry>
+	<entry key="selectMyReviewProductListDesc">
+		SELECT
+              REVIEW_NO
+            , POINT
+            , REVIEW_TEXT
+            , REVIEW_IMAGE
+            , REVIEW_REGISTER
+            , USER_NO
+            , ORDER_NO
+            , R.STATUS
+            , PRODUCT_NAME
+	  FROM REVIEW  R
+	  JOIN PRODUCT USING(PRODUCT_NO)
+	  WHERE USER_NO = ?
+	  AND R.STATUS = 'Y'
+	  ORDER BY PRODUCT_NAME DESC
+	</entry>
+	<entry key="selectMyReviewProductListAsc">
+		SELECT
+              REVIEW_NO
+            , POINT
+            , REVIEW_TEXT
+            , REVIEW_IMAGE
+            , REVIEW_REGISTER
+            , USER_NO
+            , ORDER_NO
+            , R.STATUS
+            , PRODUCT_NAME
+	  FROM REVIEW  R
+	  JOIN PRODUCT USING(PRODUCT_NO)
+	  WHERE USER_NO = ?
+	  AND R.STATUS = 'Y'
+	  ORDER BY PRODUCT_NAME ASC
+	</entry>
+</properties>

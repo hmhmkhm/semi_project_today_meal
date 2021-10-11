@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM
+"http://java.sun.com/dtd/properties.dtd">
+<properties>
+    <entry key="selectProduct">
+    	SELECT
+		       AA.PRODUCT_NO
+		     , AA.PRODUCT_NAME
+		     , AA.PRODUCT_IMG
+		     , AA.PRODUCT_PRICE
+		     , OPTION_COUNT
+		     , OPTION_NAME
+		     , OPTION_PRICE
+		  FROM PRODUCT AA
+		  JOIN OPTION_TYPE AB ON(AA.PRODUCT_NO = AB.PRODUCT_NO)
+		  JOIN OPT AC ON(AB.OPTION_TYPE_NO = AC.OPTION_TYPE_NO)
+		  JOIN (SELECT
+		               AA.PRODUCT_NO
+		             , NVL(COUNT(*),0) OPTION_COUNT
+		          FROM PRODUCT AA
+		          JOIN OPTION_TYPE AB ON(AA.PRODUCT_NO = AB.PRODUCT_NO)
+		          JOIN OPT AC ON(AB.OPTION_TYPE_NO = AC.OPTION_TYPE_NO)
+		          WHERE AA.PRODUCT_NO = ?
+		         GROUP BY AA.PRODUCT_NO) AD ON (AA.PRODUCT_NO = AD.PRODUCT_NO)
+		 ORDER BY OPTION_NAME ASC
+    </entry>
+</properties>

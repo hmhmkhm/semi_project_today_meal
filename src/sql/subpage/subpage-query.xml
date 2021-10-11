@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+	<entry key="selectCategoryName">
+		SELECT
+			   CATEGORY_NAME
+		  FROM PRODUCT_CATEGORY
+		 WHERE CATEGORY_NO = ?
+	</entry>
+	<entry key="getListCount">
+		SELECT
+			   COUNT(*)
+		  FROM PRODUCT_LIST
+		 WHERE CATEGORY_NO = ?
+	</entry>
+	<entry key="selectRecentList">
+		SELECT 
+			   PRODUCT_NO
+			 , PRODUCT_NAME
+			 , PRODUCT_IMG
+			 , PRODUCT_PRICE
+			 , PRODUCT_DATE
+			 , CATEGORY_NO
+			 , SOLD_OUT
+		  FROM (SELECT ROWNUM RNUM, P.*
+				  FROM (SELECT
+							   PRODUCT_NO
+							 , PRODUCT_NAME
+							 , PRODUCT_IMG
+							 , PRODUCT_PRICE
+							 , PRODUCT_DATE
+							 , CATEGORY_NO
+							 , SOLD_OUT
+						  FROM PRODUCT_LIST
+						 WHERE CATEGORY_NO = ?
+						 ORDER BY PRODUCT_DATE DESC, PRODUCT_NAME ASC) P)
+		WHERE RNUM BETWEEN ? AND ?
+	</entry>
+	<entry key="selectSatisfactionList">
+		SELECT 
+			   PRODUCT_NO
+			 , PRODUCT_NAME
+			 , PRODUCT_IMG
+			 , PRODUCT_PRICE
+			 , PRODUCT_DATE
+			 , CATEGORY_NO
+			 , SOLD_OUT
+		  FROM (SELECT ROWNUM RNUM, P.*
+				  FROM (SELECT
+							   PRODUCT_NO
+							 , PRODUCT_NAME
+							 , PRODUCT_IMG
+							 , PRODUCT_PRICE
+							 , PRODUCT_DATE
+							 , CATEGORY_NO
+							 , SOLD_OUT
+						  FROM PRODUCT_LIST
+						 WHERE CATEGORY_NO = ?
+						 ORDER BY REVIEW_POINT DESC, PRODUCT_NAME ASC) P)
+		WHERE RNUM BETWEEN ? AND ?
+	</entry>
+	<entry key="selectHightpriceList">
+		SELECT 
+			   PRODUCT_NO
+			 , PRODUCT_NAME
+			 , PRODUCT_IMG
+			 , PRODUCT_PRICE
+			 , PRODUCT_DATE
+			 , CATEGORY_NO
+			 , SOLD_OUT
+		  FROM (SELECT ROWNUM RNUM, P.*
+				  FROM (SELECT
+							   PRODUCT_NO
+							 , PRODUCT_NAME
+							 , PRODUCT_IMG
+							 , PRODUCT_PRICE
+							 , PRODUCT_DATE
+							 , CATEGORY_NO
+							 , SOLD_OUT
+						  FROM PRODUCT_LIST
+						 WHERE CATEGORY_NO = ?
+						 ORDER BY PRODUCT_PRICE DESC, PRODUCT_NAME ASC) P)
+		WHERE RNUM BETWEEN ? AND ?
+	</entry>
+	<entry key="selectLowpriceList">
+		SELECT 
+			   PRODUCT_NO
+			 , PRODUCT_NAME
+			 , PRODUCT_IMG
+			 , PRODUCT_PRICE
+			 , PRODUCT_DATE
+			 , CATEGORY_NO
+			 , SOLD_OUT
+		  FROM (SELECT ROWNUM RNUM, P.*
+				  FROM (SELECT
+							   PRODUCT_NO
+							 , PRODUCT_NAME
+							 , PRODUCT_IMG
+							 , PRODUCT_PRICE
+							 , PRODUCT_DATE
+							 , CATEGORY_NO
+							 , SOLD_OUT
+						  FROM PRODUCT_LIST
+						 WHERE CATEGORY_NO = ?
+						 ORDER BY PRODUCT_PRICE ASC, PRODUCT_NAME ASC) P)
+		WHERE RNUM BETWEEN ? AND ?
+	</entry>
+	<entry key="getListSearch">
+		SELECT
+			   COUNT(*)
+		  FROM PRODUCT_LIST
+		 WHERE PRODUCT_NAME LIKE '%' || ? || '%'
+	</entry>
+</properties>

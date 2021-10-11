@@ -1,0 +1,214 @@
+@charset "UTF-8";
+#container {
+            width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .snb {
+            width: 200px;
+            height: 2500px;
+        }
+
+        .contents {
+            width: 888px;
+            height: 2500px;
+        }
+
+        .inner {
+            margin-top: 30px;
+            margin-left: 27px;
+            width: 836px;
+            height: 100%;
+        }
+
+        #review_title {
+            text-align: center;
+        }
+
+        ul,
+        li {
+            margin: 0;
+            padding: 0;
+            font-size: 14px;
+        }
+
+        .review_list {
+            margin: 20px 30px;
+            min-height: 565px;
+            /* margin: 0 auto; */
+        }
+
+        .review_list>ul {
+            border-bottom: 1px solid #f3f5f7;
+            height: 50px;
+            line-height: 50px;
+            display: flex;
+            justify-content: space-around;
+            list-style: none;
+        }
+
+        .review_list>ul.last {
+            border: 0;
+        }
+
+        .review_list>ul>li {
+            text-align: center;
+        }
+
+        .review_header {
+            background-color: #E5E5E5;
+            font-weight: bold;
+        }
+
+        .review_list .review_content {
+            width: 250px;
+        }
+
+        .review_list .insert_date {
+            width: 80px;
+        }
+
+        .review_list .title {
+            width: 200px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+
+        .sort_list li {
+            display: inline-block;
+            text-align: right;
+        }
+
+        .sort_list .selected {
+            font-weight: bold;
+        }
+
+        #sort {
+            text-align: right;
+            margin-right: 35px;
+        }
+
+        .review_ul {
+            display: inline-block;
+        }
+
+        .title1,
+        .insert_date1 {
+            padding-top: 17px;
+        }
+
+        /*모달 스타일*/
+
+        .modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: scroll;
+        }
+
+        .modal .bg {
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.6);
+        }
+
+        .modalBox {
+            position: absolute;
+            background-color: #fff;
+            width: 800px;
+            height: 600px;
+            padding: 15px;
+            overflow: scroll;
+        }
+        .modalBox button {
+            display: inline-block;
+            width: 80px;
+            margin: 0 auto;
+			padding: 10px;
+            border: 0px;
+            margin-top: 20px;
+            border-radius: 7px;
+        }
+        .hidden {
+            display: none;
+        }
+
+        .modifybtn {
+            background: #5C9200;
+            color: white;
+        }
+
+        .deletebtn {
+            background-color: #294401;
+            color: white;
+        }
+
+        h2 {
+            text-align: center;
+            font-weight : bold;
+            font-size : 20px;
+        }
+
+        .reviewdate {
+            text-align: right;
+        }
+
+        .reviewDate {
+            border-bottom: 1px solid #EBEBEB;
+            width: 700px;
+            margin: 0 auto;
+        }
+
+        .reviewImg {
+            width: 300px;
+            height: 300px;
+            margin: 0 auto;
+            border: 1px solid black;
+            margin-top: 10px;
+        }
+        .closeArea img{
+           float: right;
+           
+        }
+        .closeArea img:hover{
+           cursor: pointer;
+        }
+        .btnArea {
+            text-align: center;
+            border-top: 1px solid #EBEBEB;
+            width: 700px;
+            margin: 0 auto;
+        }
+        #pContent{
+            text-align: center;
+            word-break:break-all;
+        }
+        .contentArea {
+            width: 700px;
+            margin: 0 auto;
+        }
+        .reviewTtile {
+            width: 700px;
+            margin: 0 auto;
+        }
+        #review_img {
+            width: 300px;
+            height: 300px;
+        }
+        button {
+		   background: inherit;
+		   border:none;
+		   box-shadow:none;
+		   border-radius:7px;
+		   padding:0;
+		   overflow:visible;
+		   cursor:pointer
+		}

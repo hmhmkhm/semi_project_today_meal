@@ -1,0 +1,109 @@
+@charset "UTF-8";
+.wrapper {
+	display: flex;
+	text-align: center;
+	flex-direction: column;
+	align-items: center;
+	
+}
+
+#header {
+
+width : 1100px;
+	height: 100px;
+	display: flex;
+	justify-content: space-between;
+	
+}
+.Logo {
+width: 220px;
+height: 80px;
+}
+ * {
+font-family: 'Noto Sans KR', sans-serif;
+}
+#header .search {
+display: block;
+width: 450px;
+height: 42px;
+margin : 20px;
+line-height: 45px;
+border: 1px solid #294401;
+background: #FFFFFF;
+}
+
+#searchBox{
+font-size: 16px;
+width : 320px;
+padding: 10px;
+border: 0px;
+outline: none;
+background : none;
+float: left;
+}
+#searchBtn{
+width: 83px;
+height: 42px;
+border: 0px;
+background: #294401;
+outline: none;
+float: right;
+color: #FFFFFF;
+}
+button {
+   background: inherit;
+   border:none;
+   box-shadow:none;
+   border-radius:0px;
+   padding:0;
+   overflow:visible;
+   cursor:pointer;
+}
+
+#header .btnArea {
+	display:flex;
+	margin-right : 30px;
+	justify-content: center;
+}
+
+#header .btnArea a {
+	font-weight : normal;
+	font-size: 12px;
+	text-decoration:none;
+	display:block;
+	margin : 10px;
+	color: #294401;
+	width : 67px;
+	text-align : center;
+	
+ line-height: 45px;
+}
+
+
+#header a:hover {
+	cursor: pointer;
+}
+
+#nav {
+	background: #FFFFFF;
+	height: 50px;
+	width: 1100px;
+}
+
+#nav ul {
+	width: 700px;
+	line-height : 50px;
+	margin : 0 auto;
+	display: flex;
+	justify-content: space-around; 
+	list-style: none;
+}
+
+#nav a {
+	text-decoration:none;
+	color : #294401;
+	font-weight : bold;
+	display:block;
+	width : 120px;
+	text-align : center;
+}

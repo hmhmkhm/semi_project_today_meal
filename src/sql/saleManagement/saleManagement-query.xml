@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+	<entry key="listCount">
+		SELECT
+		       COUNT(*)
+		  FROM RECEIPT
+		  JOIN ORDER_STATE USING(ORDER_STATE_NO)
+		  LEFT OUTER JOIN MEMBER USING(USER_NO)
+		  LEFT OUTER JOIN PRODUCT_BUY USING(ORDER_NO)
+		  LEFT OUTER JOIN PRODUCT ON(PRODUCT_BUY.PRODUCT_NO = PRODUCT.PRODUCT_NO)
+		 WHERE SALE_DATE BETWEEN TO_DATE(?) AND TO_DATE(?)+0.9999
+		   AND USER_ID = ?
+		   AND ORDER_NO = ?
+		   AND RECEIPT.PRODUCT_NO = 2
+		   AND ORDER_STATE_NO = ?
+		 ORDER BY SALE_DATE
+	</entry>
+	<entry key="selectList">
+		SELECT
+		       ORDER_NO
+		     , SALE_DATE
+		     , USER_ID
+		     , PRODUCT_NAME
+		     , ORDER_SUM
+		     , ORDER_STATE_NO
+		     , ORDER_STATE_NAME
+		  FROM (SELECT ROWNUM RUNM, S.*
+		          FROM (SELECT
+		                       ORDER_NO
+		                     , SALE_DATE
+		                     , USER_ID
+		                     , PRODUCT_NAME
+		                     , ORDER_SUM
+		                     , ORDER_STATE_NO
+		                     , ORDER_STATE_NAME
+		                  FROM RECEIPT
+		                  JOIN ORDER_STATE USING(ORDER_STATE_NO)
+		                  LEFT OUTER JOIN MEMBER USING(USER_NO)
+		                  LEFT OUTER JOIN PRODUCT_BUY USING(ORDER_NO)
+		                  LEFT OUTER JOIN PRODUCT ON(PRODUCT_BUY.PRODUCT_NO = PRODUCT.PRODUCT_NO)
+		                 WHERE SALE_DATE BETWEEN TO_DATE(?) AND TO_DATE(?)+0.9999
+		                   AND USER_ID = ?
+		   				   AND ORDER_NO = ?
+		   				   AND RECEIPT.PRODUCT_NO = 2
+		   				   AND ORDER_STATE_NO = ?
+		                 ORDER BY ORDER_NO DESC) S)
+		 WHERE RUNM BETWEEN ? AND ?
+	</entry>
+	<entry key="selectReceipt">
+		SELECT
+		       ORDER_NO
+		     , SALE_DATE
+		     , COIN
+     		 , DELIVERY_DATE
+     		 , ORDER_SUM
+		     , ORDER_STATE_NAME
+		     , PRODUCT.PRODUCT_NAME
+		     , PRODUCT_BUY_QUANTITY
+		     , PRODUCT_PRICE
+		     , OPT.OPTION_NAME
+		     , OPTION_BUY_QUANTITY
+		     , OPTION_PRICE
+		     , IMP_UID
+		     , PAY_METHOD
+		     , PAID_AMOUNT
+		     , PAID_AT
+		     , PAYMENT_DETAIL.STATUS
+		     , DELIVERY_NAME
+		     , PHONE
+		     , ADDRESS
+		     , DREQUEST
+		     , DELIVERY_FEE
+		  FROM RECEIPT_INFORMATION
+		  JOIN PAYMENT_DETAIL USING(ORDER_NO)
+		  JOIN PRODUCT USING(PRODUCT_NO)
+		  LEFT OUTER JOIN OPT USING(OPTION_NO)
+		  JOIN ORDER_STATE USING(ORDER_STATE_NO)
+		  JOIN DELIVERY USING(ORDER_NO)
+		 WHERE ORDER_NO = ?
+	</entry>
+	<entry key="changeStatus">
+		UPDATE RECEIPT
+		   SET ORDER_STATE_NO = ?
+		 WHERE ORDER_NO IN (RECEIPT_NO_ARRAY)
+	</entry>
+</properties>

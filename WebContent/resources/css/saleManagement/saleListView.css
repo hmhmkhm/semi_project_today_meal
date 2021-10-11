@@ -1,0 +1,497 @@
+@charset "UTF-8";
+
+button {
+	background: inherit;
+	border:none;
+	box-shadow:none;
+	border-radius:7px;
+	padding:0;
+	overflow:visible;
+	cursor:pointer
+}
+
+input {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+}
+
+input::-ms-clear {
+	display: none;
+}
+
+input[type='number']::-webkit-inner-spin-button,
+input[type='number']::-webkit-outer-spin-button {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+}
+
+body.modal_open {
+	overflow: hidden;
+}
+
+#container {
+	max-width : 1100px;
+	margin:61px auto 0;
+	display: flex;
+	flex-wrap : nowrap;
+	justify-content: space-between;
+}
+
+.green_button {
+	background-color: #A1AD61;
+	border-radius: 7px;
+	color: white;
+}
+
+.contents {
+	min-width : 888px;
+}
+
+.contents_inner {
+	width: 836px;
+	margin: 30px auto 48px;
+}
+
+.contents_inner > h2 {
+	width: 100%;
+	text-align: center;
+	font-size: 20px;
+	font-weight: 700;
+	margin-bottom: 74px;
+}
+
+.search_area {
+	display: flex;
+	flex-wrap : nowrap;
+	justify-content: space-between;
+}
+
+.search_area > div {
+	width: 709px;
+}
+
+.search_area > button {
+	width: 90px;
+	height: 90px;
+	margin-right : 9px;
+	font-size: 16px;
+}
+
+.search_area > div > div:first-of-type span {
+	font-size : 16px;
+}
+
+.search_area > div > div:first-of-type span:not(.except_margin) {
+	margin-right : 10px;
+}
+
+.search_area > div > div:first-of-type select.year {
+	width : 100px;
+	height : 32px;
+}
+
+.search_area > div > div:first-of-type select:not(.year){
+	width : 60px;
+	height : 32px;
+}
+
+.search_area > div > div:last-of-type {
+	margin-top : 23px;
+	display: flex;
+	flex-wrap: nowrap;
+	justify-content: space-between;
+}
+
+.search_area > div > div:last-of-type input {
+	width : 220px;
+	height : 32px;
+	margin-left : 9px;
+	border : 1px solid #767676;
+}
+
+.search_area label {
+	font-size : 16px;
+}
+
+.result_option {
+	margin: 44px 0 10px;
+}
+
+.result_option > label {
+	font-size : 14px;
+	margin: 0 11px 0 9px;
+}
+
+.result_option > button {
+	width : 110px;
+	height : 31px;
+	font-size : 14px;
+}
+
+.result_option button:disabled {
+	opacity: 30%;
+	cursor : not-allowed;
+	pointer-events: none;
+}
+
+.result_area > table {
+	width : 100%;
+}
+
+.result_area > table > thead {
+	height: 50px;
+	background-color: #EBEBEB;
+}
+
+.result_area > table > thead th {
+	font-size : 16px;
+	text-align: center;
+	background: url(../../images/saleManagement/bar.png) no-repeat 100% 50%;
+}
+
+
+.result_area > table > thead th:first-of-type {
+	text-indent: -9999px;
+	width : 28px;
+	background: none;
+}
+
+.result_area > table > thead th:nth-of-type(2) {
+	width : 95px;
+}
+
+.result_area > table > thead th:nth-of-type(3){
+	width : 100px;
+}
+
+.result_area > table > thead th:nth-of-type(4) {
+	width: 115px;
+}
+
+.result_area > table > thead th:nth-of-type(5) {
+	width : 190px;
+}
+
+.result_area > table > thead th:nth-of-type(6) {
+	width : 95px;
+}
+
+.result_area > table > thead th:nth-of-type(7) {
+	width : 105px;
+}
+
+.result_area > table > thead th:last-of-type {
+	width: 110px;
+	background: none;
+}
+
+.result_area > table > tbody > tr {
+	height : 45px;
+	box-sizing: border-box;
+	border-bottom: 1px solid #EBEBEB;
+	font-size : 14px;
+	text-align: center;
+}
+
+.result_area > table > tbody > tr:last-of-type {
+	border: none;
+}
+
+.result_area > table > tbody {
+	border-bottom: 1px solid #C4C4C4;
+}
+
+.result_area > table > tbody > tr > td:first-of-type {
+	padding-right : 8px;
+}
+
+.result_area > table > tbody > tr > td .learn_more_button {
+	width : 85px;
+	height : 31px;
+	text-align: center;
+}
+
+.result_area.empty_result > table > tbody > tr td{
+	padding : 62px 0; 
+}
+
+.result_area.empty_result .paging {
+	display: none;
+}
+
+.result_area input {
+	width : 20px;
+	height : 20px;
+	box-sizing: border-box;
+	border: 1px solid #c4c4c4;
+}
+
+.result_area input.active {
+	background: #A1AD61 url(../../images/common/checkbox/check_icon.png) center center no-repeat;
+}
+
+.dimmed {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	display: none;
+	background-color: rgba(0, 0, 0, 0.7);
+	overflow: hidden;
+	z-index: 999;
+}
+
+.dimmed.show {
+	display: block;
+}
+
+#modal {
+	position: relative;
+	background-color: white;
+}
+
+#modal > .close_button {
+	position: absolute;
+	top : 20px;
+	right : 20px;
+	width : 23px;
+	height : 27px;
+	background: url(../../images/common/close_button/close_button.png);
+}
+
+#modal.payment {
+	position: absolute;
+	top : calc(50% - 400px);
+	left : calc(50% - 250px);
+	width : 500px;
+	height : 800px;
+}
+
+#modal.change {
+	position: absolute;
+	top : calc(50% - 136px);
+	left : calc(50% - 170px);
+	width : 340px;
+	height : 273px;
+}
+
+.modal_inner .payment_inner, .modal_inner .change_inner {
+	display: none;
+}
+
+.payment > .modal_inner .payment_inner {
+	display: block;
+	width : 436px;
+	height: 700px;
+	overflow-y: scroll;
+	margin: 80px auto 40px;
+}
+
+.payment h3 {
+	font-size: 20px;
+	font-weight: 700;
+	text-align: center;
+	margin-bottom: 36px;
+}
+
+.payment > .modal_inner .payment_inner > div > div:first-of-type {
+	margin-bottom: 20px;
+}
+
+.payment > .modal_inner .payment_inner > div > div:not(:first-of-type) {
+	margin-bottom: 53px;
+}
+
+.payment > .modal_inner .payment_inner h4 {
+	font-size: 16px;
+	margin-bottom: 9px;
+}
+
+.payment > .modal_inner .payment_inner table {
+	width : 100%;
+	box-sizing: border-box;
+	border: 1px solid black;
+}
+
+.payment > .modal_inner .payment_inner table thead th {
+	background-color: #EBEBEB;
+	text-align: center;
+}
+
+.payment > .modal_inner .payment_inner table tbody tr td:not(.center) {
+	font-size: 14px;
+	padding-left: 12px;
+}
+
+.payment > .modal_inner .payment_inner table tr td.center {
+	text-align: center;
+}
+
+.payment > .modal_inner .payment_inner .status_area {
+	display: flex;
+	flex-wrap : nowrap;
+	justify-content: space-between;
+	font-size: 16px;
+}
+
+.payment > .modal_inner .payment_inner .status_area > ul {
+	width: 208px;
+}
+
+.payment > .modal_inner .payment_inner .status_area > ul > li {
+	display: inline-block;
+}
+
+.payment > .modal_inner .payment_inner .status_area > ul > li:first-of-type {
+	padding-right : 14px;
+	margin-right : 14px;
+	border-right: 1px solid #C4C4C4;
+}
+
+.payment > .modal_inner .payment_inner .product_area table thead {
+	height: 50px;
+	box-sizing: border-box;
+	border: 1px solid black;
+}
+
+.payment > .modal_inner .payment_inner .product_area table thead th:not(:last-of-type) {
+	background: #EBEBEB url(../../images/saleManagement/bar.png) no-repeat 100% 50%;
+}
+
+.payment > .modal_inner .payment_inner .product_area table tbody {
+	box-sizing: border-box;
+	border-bottom: 1px solid #DDDDE1;
+}
+
+.payment > .modal_inner .payment_inner .product_area table tbody::before {
+	content: "";
+	display: block;
+	height: 10px;
+}
+
+.payment > .modal_inner .payment_inner .product_area table tbody::after {
+	content: "";
+	display: block;
+	height: 10px;
+}
+
+.payment > .modal_inner .payment_inner .product_area table tbody tr.depth_1 td{
+	line-height: 30px;
+}
+
+.payment > .modal_inner .payment_inner .product_area table tbody tr.depth_2 td{
+	line-height: 20px;
+}
+
+.payment > .modal_inner .payment_inner .product_area table tfoot th{
+	font-weight: 700;
+	font-size: 16px;
+	line-height: 53px;
+	text-align: center;
+}
+
+.payment > .modal_inner .payment_inner .product_area table tfoot td{
+	font-weight: 700;
+	font-size: 16px;
+	line-height: 53px;
+}
+
+.payment > .modal_inner .payment_inner .list dl {
+	height: 50px;
+	display: flex;
+	flex-wrap : nowrap;
+	justify-content: space-between;
+	box-sizing: border-box;
+	border-bottom: 1px solid #DDDDE1;
+	font-size: 14px;
+}
+
+.payment > .modal_inner .payment_inner .list > div {
+	box-sizing: border-box;
+	border: 1px solid black;
+}
+
+.payment > .modal_inner .payment_inner .list dt {
+	width: 100px;
+	box-sizing : border-box;
+	border-right : 1px solid black;
+	text-align: center;
+	background-color: #EBEBEB;
+}
+
+.payment > .modal_inner .payment_inner dt.two_line, .payment > .modal_inner .payment_inner dd.two_line {
+	padding-top: 7px;
+}
+
+.payment > .modal_inner .payment_inner .list dd:not(.two_line), .payment > .modal_inner .payment_inner dt:not(.two_line) {
+	line-height: 50px;
+}
+
+.payment > .modal_inner .payment_inner .list dd {
+	width: 322px;
+	box-sizing: border-box;
+	padding-left: 14px;
+}
+
+.payment > .modal_inner .payment_inner .list dd.two_line {
+	word-break: keep-all;
+	overflow-y: auto;
+}
+
+
+.payment > .modal_inner .payment_inner button {
+	display: block;
+	width: 85px;
+	height: 31px;
+	margin: 0 auto;
+}
+
+.change > .modal_inner .change_inner {
+	display: block;
+}
+
+.change > .modal_inner .change_inner h3 {
+	width: 252px;
+	margin: 62px auto 24px;
+	font-size: 16px;
+	text-align: center;
+}
+
+.change > .modal_inner .change_inner div {
+	margin: 0 auto;
+	display: flex;
+	flex-wrap : nowrap;
+	justify-content: space-between;
+}
+
+.change > .modal_inner .change_inner div.change_area {
+	width : 248px;
+	height : 25px;
+}
+
+.change > .modal_inner .change_inner div.change_area span {
+	width : 22px;
+	height : 22px;
+	background: url(../../images/saleManagement/right_arrow.png) no-repeat center center;
+}
+
+.change > .modal_inner .change_inner div.button_area {
+	margin-top : 50px;
+	width : 190px;
+	height : 30px;
+}
+
+.change > .modal_inner .change_inner div.button_area button {
+	width : 88px;
+	height : 30px;
+	text-align: center;
+	color: white;
+}
+
+.change > .modal_inner .change_inner div.button_area .confirm_button {
+	background-color: #294401;
+	border-radius: 7px;
+}

@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM
+"http://java.sun.com/dtd/properties.dtd">
+<properties>
+	<entry key="selectProductList">
+		SELECT
+		       PRODUCT_NO
+		     , CATEGORY_NAME
+		     , PRODUCT_NAME
+		  FROM PRODUCT
+		  JOIN PRODUCT_CATEGORY USING(CATEGORY_NO)
+		 WHERE STATUS = 'Y'
+		 ORDER BY PRODUCT_NO DESC
+	</entry>
+	
+	<entry key="selectCategoryList">
+		SELECT
+		       PRODUCT_NO
+		     , CATEGORY_NAME
+		     , PRODUCT_NAME
+		  FROM PRODUCT P
+		  JOIN PRODUCT_CATEGORY C USING(CATEGORY_NO)
+		 WHERE P.STATUS = 'Y'
+		   AND CATEGORY_NAME LIKE '%' || ? || '%'
+		 ORDER BY PRODUCT_NO DESC
+	</entry>
+	
+	<entry key="selectNoList">
+		SELECT
+		       PRODUCT_NO
+		     , CATEGORY_NAME
+		     , PRODUCT_NAME
+		  FROM PRODUCT P
+		  JOIN PRODUCT_CATEGORY C USING(CATEGORY_NO)
+		 WHERE P.STATUS = 'Y'
+		   AND PRODUCT_NO LIKE '%' || ? || '%'
+		 ORDER BY PRODUCT_NO DESC
+	</entry>
+	
+	<entry key="selectNameList">
+		SELECT
+		       PRODUCT_NO
+		     , CATEGORY_NAME
+		     , PRODUCT_NAME
+		  FROM PRODUCT P
+		  JOIN PRODUCT_CATEGORY C USING(CATEGORY_NO)
+		 WHERE P.STATUS = 'Y'
+		   AND PRODUCT_NAME LIKE '%' || ? || '%'
+		 ORDER BY PRODUCT_NO DESC
+	</entry>
+	
+	<entry key="deleteProduct">
+		UPDATE PRODUCT
+		   SET STATUS = 'N'
+		 WHERE PRODUCT_NO = ?
+	</entry>
+	
+	<entry key="insertProduct">
+	INSERT 
+	INTO PRODUCT
+		(	PRODUCT_NO,
+			PRODUCT_NAME,
+			PRODUCT_IMG,
+			PRODUCT_PRICE,
+			PRODUCT_DETAIL,
+			PRODUCT_DATE,
+			CATEGORY_NO,
+			STATUS)
+	VALUES
+	(
+		SEQ_PNO.NEXTVAL,
+		?,
+		?,
+		?,
+		?,
+		SYSDATE,
+		?,
+		DEFAULT
+	)
+	</entry>
+	
+	<entry key="insertOptionType">
+		INSERT 
+		INTO OPTION_TYPE
+		(
+			OPTION_TYPE_NO,
+			OPTION_TYPE,
+			PRODUCT_NO)
+		VALUES 
+		(
+			SEQ_TNO.NEXTVAL,
+			?,
+			SEQ_PNO.CURRVAL
+		)
+	</entry>
+	<entry key="insertOption">
+		INSERT 
+		INTO OPT
+		(
+			OPTION_NO,
+			OPTION_NAME,
+			OPTION_PRICE,
+			OPTION_TYPE_NO)
+		VALUES 
+		(
+			SEQ_ONO.NEXTVAL,
+			?,
+			?,
+			SEQ_TNO.CURRVAL
+		)
+	</entry>
+	
+	<entry key="selectProduct">
+		SELECT
+		       PRODUCT_NO
+		     , PRODUCT_NAME
+		     , PRODUCT_IMG
+		     , PRODUCT_PRICE
+		     , PRODUCT_DETAIL
+		     , CATEGORY_NO
+		     , OPTION_TYPE_NO
+		     , OPTION_TYPE
+		     , OPTION_NAME
+		     , OPTION_PRICE
+		  FROM PRODUCT P
+		  JOIN OPTION_TYPE T USING(PRODUCT_NO)
+		  JOIN OPT O USING(OPTION_TYPE_NO)
+		 WHERE PRODUCT_NO = ?
+		   AND P.STATUS = 'Y'
+		 ORDER BY OPTION_TYPE_NO
+	</entry>
+	
+	<entry key="updateProduct">
+		UPDATE PRODUCT
+		   SET PRODUCT_NAME = ?
+		     , PRODUCT_IMG = ?
+		     , PRODUCT_PRICE = ?
+		     , PRODUCT_DETAIL = ?
+		     , CATEGORY_NO = ?
+		 WHERE PRODUCT_NO = ?
+	</entry>
+	
+	<entry key="deleteOptionType">
+		DELETE FROM OPTION_TYPE 
+		 WHERE OPTION_TYPE_NO = ?
+	</entry>
+	
+	<entry key="deleteOpt">
+		DELETE FROM OPT 
+		 WHERE OPTION_TYPE_NO = ?
+	</entry>
+	
+	<entry key="insertAddedOptionType">
+		INSERT 
+		INTO OPTION_TYPE
+		(
+			OPTION_TYPE_NO,
+			OPTION_TYPE,
+			PRODUCT_NO)
+		VALUES 
+		(
+			SEQ_TNO.NEXTVAL,
+			?,
+			?
+		)
+	</entry>
+	<entry key="insertAddedOption">
+		INSERT 
+		INTO OPT
+		(
+			OPTION_NO,
+			OPTION_NAME,
+			OPTION_PRICE,
+			OPTION_TYPE_NO)
+		VALUES 
+		(
+			SEQ_ONO.NEXTVAL,
+			?,
+			?,
+			SEQ_TNO.CURRVAL
+		)
+	</entry>
+</properties>

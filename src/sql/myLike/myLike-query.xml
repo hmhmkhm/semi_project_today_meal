@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+	<entry key="selectList">
+		SELECT 
+		        REVIEW_INFORMATION.REVIEW_NO
+		      , LIKE_NO
+		      , ORDER_SUM
+		      , PRODUCT_IMG
+		      , PRODUCT_NAME
+		      , PRODUCT_BUY_QUANTITY
+		      , PRODUCT_INVENTORY_QUANTITY
+		      , OPTION_NAME
+		      , OPTION_BUY_QUANTITY
+		      , OPTION_INVENTORY_QUANTITY
+		  FROM REVIEW_INFORMATION
+		  LEFT OUTER JOIN (SELECT REVIEW_NO, LIKE_NO FROM LIKE_MANAGEMENT WHERE USER_NO = ?) LIKED ON(LIKED.REVIEW_NO = REVIEW_INFORMATION.REVIEW_NO)
+		 WHERE REVIEW_INFORMATION.REVIEW_NO IN (SELECT REVIEW_NO
+		                        FROM (SELECT ROWNUM RNUM, L.*
+		                                FROM (SELECT REVIEW_NO
+		                                        FROM LIKE_MANAGEMENT
+		                                       WHERE USER_NO = ?
+		                                       ORDER BY LIKE_DATE DESC) L)
+		                       WHERE RNUM BETWEEN ? AND ?)
+		 ORDER BY LIKE_NO DESC
+	</entry>
+	<entry key="likeCount">
+		SELECT
+			   COUNT(*)
+		  FROM LIKE_MANAGEMENT
+		 WHERE REVIEW_NO = ?
+	</entry>
+	<entry key="insertLike">
+		INSERT INTO LIKE_MANAGEMENT
+		VALUES
+		(
+			SEQ_LNO.NEXTVAL
+		  , SYSDATE
+		  , ?
+		  , ?
+		)
+	</entry>
+	<entry key="deleteLike">
+		DELETE
+		FROM LIKE_MANAGEMENT
+		 WHERE USER_NO = ?
+		   AND REVIEW_NO = ?
+	</entry>
+	<entry key="personalLikeListCount">
+		SELECT 
+		       COUNT(*)
+		  FROM LIKE_MANAGEMENT
+		 WHERE USER_NO = ?
+	</entry>
+	<entry key="deleteLikeList">
+		DELETE
+		  FROM LIKE_MANAGEMENT
+		 WHERE USER_NO = ?
+		   AND LIKE_NO IN (LIKE_NO_ARRAY)
+	</entry>
+</properties>

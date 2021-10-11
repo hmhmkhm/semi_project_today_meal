@@ -1,0 +1,55 @@
+@charset "UTF-8";
+
+.paging a {
+	text-decoration: none;
+	color: #000;
+}
+
+.paging {
+	padding-top : 85px;
+}
+.paging > ul {
+	font-size: 0;
+	text-align: center;
+}
+
+.paging > ul > li {
+	display: inline-block;
+	width : 25px;
+	height : 25px;
+}
+
+.paging > ul > li a {
+	display : block;
+	width : 100%;
+	height : 100%;
+	box-sizing: border-box;
+	border:1px solid #c4c4c4;
+	font-size: 14px;
+	line-height: 25px;
+	text-align: center;
+}
+
+.paging > ul > li a.now {
+	border-color: #000;
+}
+
+.paging > ul > li:first-of-type a {
+	text-indent: -9999px;
+	background: url(../../../images/common/paging/prev_disabled.png) no-repeat center center;
+}
+
+.paging > ul > li:last-of-type a {
+	text-indent: -9999px;
+	background: url(../../../images/common/paging/next_disabled.png) no-repeat center center;
+}
+
+.paging > ul > li:first-of-type a.active {
+	text-indent: -9999px;
+	background: url(../../../images/common/paging/prev_active.png) no-repeat center center;
+}
+
+.paging > ul > li:last-of-type a.active {
+	text-indent: -9999px;
+	background: url(../../../images/common/paging/next_active.png) no-repeat center center;
+}

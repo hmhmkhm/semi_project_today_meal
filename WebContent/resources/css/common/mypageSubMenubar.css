@@ -1,0 +1,102 @@
+@charset "UTF-8";
+  
+.yjmainframe {
+	width : 210px;
+    height : 517px;
+}
+.yjwrapper{
+    position: relative;
+    width: 170px;
+    height: 487px;
+    left: 20px;
+    top: 30px;
+}
+
+.yjheader2{
+    position: static;
+    width: 170px;
+    height: 29px;
+    left: 0px;
+    top: 0px;
+
+    font-family: 'Noto Sans KR', sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 29px;
+    letter-spacing: -0.02em;
+    text-align: left;
+    cursor: pointer;
+}
+
+.yjicon{
+    width: 25px;
+    height: 25px;
+    margin-right: 5px;
+}
+.yjcategory{
+    position: relative;
+    width: 150px;
+    height: 441px;
+    left: 20px;
+    top: 17px;
+
+    font-family: 'Noto Sans KR', sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 23px;
+    letter-spacing: -0.02em;
+}
+
+.yjcategory>ul{
+    list-style:none;
+    padding-left: 0px;
+}
+.yjcategory>ul>li{
+    display: flex;
+    align-items: center;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 23px;
+    letter-spacing: -0.02em;
+}
+.yja{
+    color: black;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+
+.yjcategory ul{
+    margin-bottom: 20px;
+}
+
+.vertical_line li{
+    /* margin-top: 15px; */
+    margin-top: 0px;
+    padding-left: 30px;
+    overflow: hidden;
+    max-height: 0px;
+
+    font-family: 'Noto Sans KR', sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: -0.02em;
+}
+
+.yjactive .yjhiddenLi{
+    margin-top: 15px;
+    max-height: 20px;
+}
+.yjfirst_li:hover{
+    cursor : pointer;
+}
+.vertical_line{
+    border-left: 1px solid #D9D9D9;
+    margin-left: 10px;
+}

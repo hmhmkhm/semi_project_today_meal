@@ -1,0 +1,75 @@
+@charset "UTF-8";
+
+footer {
+    background : #f9f9f9;
+    position: absolute;
+    left: 50%;
+    margin-top: 200px;
+    margin-left: -550px;
+    margin-bottom: 0px;
+    width: 1100px; 
+    height: 185px;  
+    font-family: 'Noto Sans KR', sans-serif; 
+    opacity: 0.6; 
+    letter-spacing: -0.02em;
+}
+
+footer img {
+    width: 185px;
+    height: 185px;
+}
+
+.todaymealLogo {
+    position: absolute;
+    top: 0%;
+    bottom: 0%;
+    left: 0%;
+    right: 0%;
+}
+
+.footerWrapper1 {
+    position: absolute;
+    top: 16px;
+    bottom: 20px;
+    left: 192px;
+    line-height: 29px;
+
+}
+
+#companyName {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+    color: #294401;
+}
+
+#companyInfo {
+    color: rgba(0, 0, 0, 0.5);
+    font-size: 14px;
+}
+
+.footerWrapper2 {
+    color: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    left: 80%;
+    
+}
+
+#etc {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+}
+
+#customercenter {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+#customercenterInfo {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 8px;
+}

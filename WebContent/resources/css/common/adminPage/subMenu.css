@@ -1,0 +1,67 @@
+@charset "UTF-8";
+
+a {
+	text-decoration: none;
+	color: #000;
+}
+
+.snb {
+	width : 210px;
+}
+
+.snb_inner {
+	width : 170px;
+	margin: 30px auto 0;
+}
+
+.snb_inner > h2 {
+	font-size: 20px;
+	font-weight: 700;
+	margin-bottom: 17px;
+}
+
+.snb_inner > ul > li {
+	margin-bottom: 20px;
+}
+
+.snb_inner > ul > li span {
+	background: no-repeat 0 0/20px url(../../../images/common/adminPage/subMenu/sale_icon.png);
+	padding-left: 30px;
+	font-size: 16px;
+	font-weight: 400;
+}
+
+.snb_inner > ul > li:nth-child(2) span {
+	background-image: url(../../../images/common/adminPage/subMenu/salesAnalysis_icon.png);
+}
+
+.snb_inner > ul > li:nth-child(3) span {
+	background-image: url(../../../images/common/adminPage/subMenu/product_icon.png);
+}
+
+.snb_inner > ul > li:nth-child(4) span {
+	background-image: url(../../../images/common/adminPage/subMenu/inventory_icon.png);
+}
+
+.snb_inner > ul > li:nth-child(5) span {
+	background-image: url(../../../images/common/adminPage/subMenu/question_icon.png);
+}
+
+.snb_inner > ul > li:nth-child(6) span {
+	background-image: url(../../../images/common/adminPage/subMenu/event_icon.png);
+}
+
+.snb_inner ul li > .depth_2 {
+	margin : 15px 0 0 10px;
+	padding-left : 29px;
+	border-left : 1px solid #d9d9d9;
+	box-sizing: border-box;
+}
+
+.snb_inner ul li > .depth_2 > li { 
+	font-size : 14px;
+}
+
+.snb_inner ul li > .depth_2 > li:not(:last-of-type) { 
+	margin-bottom: 15px;
+}

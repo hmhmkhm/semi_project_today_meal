@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM
+"http://java.sun.com/dtd/properties.dtd">
+<properties>
+<entry key="selectProduct">
+	SELECT * FROM PRODUCT
+</entry>
+<entry key="selectReviewList">
+	SELECT
+		REVIEW_NO,
+		POINT,
+		REVIEW_TEXT,
+		REVIEW_IMAGE,
+		REVIEW_REGISTER,
+		R.USER_NO,
+		R.PRODUCT_NO,
+		R.ORDER_NO,
+		R.STATUS,
+		USER_NAME
+		FROM REVIEW R
+		JOIN MEMBER M ON (M.USER_NO = R.USER_NO)
+		WHERE PRODUCT_NO = ?
+		AND R.STATUS = 'Y'
+		ORDER BY REVIEW_REGISTER DESC, REVIEW_NO
+</entry>
+<!-- 로그인한 사용자의 리뷰만 조회 -->
+<entry key="selectMyReviewList">
+	SELECT
+		REVIEW_NO,
+		POINT,
+		REVIEW_TEXT,
+		REVIEW_IMAGE,
+		REVIEW_REGISTER,
+		USER_NO,
+		PRODUCT_NO,
+		ORDER_NO,
+		STATUS
+	FROM review
+	WHERE STATUS = 'Y'
+	AND user_no = ?
+	ORDER BY review_register DESC
+</entry>
+<entry key="selectReviewPointList">
+	SELECT
+		REVIEW_NO,
+		POINT,
+		REVIEW_TEXT,
+		REVIEW_IMAGE,
+		REVIEW_REGISTER,
+		USER_NO,
+		PRODUCT_NO,
+		ORDER_NO,
+		STATUS
+	FROM REVIEW 
+	WHERE PRODUCT_NO = 1
+	AND STATUS = 'Y'
+	ORDER BY POINT DESC, REVIEW_REGISTER DESC	
+</entry>
+<!-- 리뷰 상품명 내림차순 정렬 -->
+<entry key="selectReviewNameDesc">
+	SELECT
+		REVIEW_NO,
+		POINT,
+		REVIEW_TEXT,
+		REVIEW_IMAGE,
+		REVIEW_REGISTER,
+		USER_NO,
+		R.PRODUCT_NO,
+		R.ORDER_NO,
+		R.STATUS,
+		P.PRODUCT_NAME
+	FROM REVIEW R
+	JOIN PRODUCT P ON (P.PRODUCT_NO = R.PRODUCT_NO)
+	WHERE USER_NO = ? 
+	AND R.STATUS = 'Y'
+	ORDER BY P.PRODUCT_NAME DESC, REVIEW_REGISTER DESC
+</entry>
+<entry key="selectReviewNameAsc">
+	SELECT
+		REVIEW_NO,
+		POINT,
+		REVIEW_TEXT,
+		REVIEW_IMAGE,
+		REVIEW_REGISTER,
+		USER_NO,
+		R.PRODUCT_NO,
+		R.ORDER_NO,
+		R.STATUS,
+		P.PRODUCT_NAME
+	FROM REVIEW R
+	JOIN PRODUCT P ON (P.PRODUCT_NO = R.PRODUCT_NO)
+	WHERE USER_NO = ? 
+	AND R.STATUS = 'Y'
+	ORDER BY P.PRODUCT_NAME ASC, REVIEW_REGISTER DESC
+</entry>
+<entry key="selectProductDetail">
+	SELECT * FROM PRODUCT
+	WHERE PRODUCT_NO = ?
+</entry>
+<entry key="selectMyReveiwProduct">
+	SELECT
+		*
+	FROM PRODUCT 
+	JOIN REVIEW R USING (PRODUCT_NO)
+	WHERE R.USER_NO = ?
+</entry>
+</properties>

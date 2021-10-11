@@ -1,0 +1,82 @@
+@charset "UTF-8";
+ #container{
+            width : 1100px;
+            margin: 0 auto;
+            display: flex;
+            justify-content:space-between;
+        }
+        
+        .snb {
+            width : 200px;
+            height: 2500px;
+        }
+        
+        .contents {
+            width : 888px;
+            height: 2500px; 
+        }
+        
+        .inner {
+            margin-top : 30px;
+            margin-left: 27px;
+            width : 836px;
+            height : 100%;
+        }
+        #admin_evnet_title {
+            text-align: center;
+        }
+        ul, li {
+        margin: 0;
+        padding: 0;
+        font-size: 14px;
+        }
+        .event_list {
+            margin: 20px 30px;
+            min-height: 565px;
+            /* margin: 0 auto; */
+        }
+
+        .event_list>ul {
+            border-bottom: 1px solid #f3f5f7;
+            height: 50px;
+            line-height: 50px;
+            display: flex;
+            justify-content: space-around;
+            list-style: none;
+        }
+
+        .event_list>ul.last {
+            border: 0;
+        }
+
+        .event_list>ul>li {
+            text-align: center;
+        }
+
+        .event_header {
+            background-color: #E5E5E5;
+            font-weight: bold;
+        }
+        .event_list .mo_del {
+            width: 60px;
+        }
+        .event_list .title {
+            width: 400px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+        button {
+            width: 75px;
+            height: 35px;
+            border: 0px;
+            color: white;
+            background: #A1AD61;
+            margin: 5px;
+            border-radius: 7px;
+        }
+        
+        #admin_insert {
+            text-align: right;
+            margin-right: 30px;
+        }

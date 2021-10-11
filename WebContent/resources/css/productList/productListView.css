@@ -1,0 +1,126 @@
+@charset "UTF-8";
+
+	#container{
+		width : 1100px;
+		margin: 0 auto;
+		margin-top: 63px;
+		display: flex;
+		justify-content:space-between;
+	}
+	
+	.snb {
+		width : 200px;
+	}
+	
+	.contents {
+		width : 888px;
+	}
+	
+	.inner {
+		/* margin-top : 30px; */
+		margin-left: 27px;
+		width : 836px;
+		height : 100%;
+	}
+
+	.product_title {
+		font-style: normal;
+		font-weight: bolder;
+		font-size: 20px;
+		line-height: 29px;
+		text-align: center;
+		margin-bottom: 35px;
+	}
+	
+	#searchbox {
+		width: 150px;
+		height: 25px;
+		margin-left: 5px;
+	}
+	
+	.searchBtn {
+		width: 60px;
+		height: 25px;
+		background: #294401;
+		color: white;
+		border: none;
+		margin-left: 5px;
+	}
+	
+	#category {
+		height: 25px;
+	}
+	
+	.subject {
+		margin-bottom: 10px;
+	}
+	
+	.subject_title, .subject_content > * {
+		margin: 2px;	
+	}
+	
+	.subject {
+		background: rgba(240, 240, 240, 1);	
+	}
+	
+	.product_category, .product_search {
+		display: flex;
+		margin-bottom: 20px;
+	}
+	
+	#searchCondition {
+		width: 80px;
+	}
+	
+	.category_div, .search_div {
+		width: 120px;
+	}
+	
+	#chdel_btn {
+		width: 65px;
+		height: 30px;
+		background: #294401;
+		color: white;
+		border: none;
+		cursor: pointer;
+		float: right;
+		margin-bottom: 10px;
+	}
+	
+	.pro_table {
+		margin-top: 10px;
+		width: 836px;
+		text-align: center;	
+		
+	}
+	
+	.pro_th {
+		padding: 5px;
+		background: #EBEBEB;
+		text-align: center;
+	}
+	
+	.pro_td {
+		padding: 5px;
+		border-bottom: 1px solid #EBEBEB;
+	}
+	
+	#mod_btn {
+		width: 55px;
+		height: 30px;
+		background: #A1AD61;
+		color: white;
+		border-radius: 7px;
+		border: none;
+		cursor: pointer;
+	}
+	
+	#del_btn {
+		width: 55px;
+		height: 30px;
+		background: #294401;
+		color: white;
+		border-radius: 7px;
+		border: none;
+		cursor: pointer;
+	}

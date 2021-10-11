@@ -1,0 +1,278 @@
+@charset "UTF-8";
+
+#container{	
+    max-width: 1100px;
+    margin: 0 auto;
+    margin-top: 63px;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+}
+.myPageFrame{
+    width: 888px;
+    min-height: 1500px;
+}
+.myPageWrapper{
+    position: relative;
+    width: 836px;
+    min-height: 1300px;
+    left: 27px;
+    top: 30px;
+
+}
+.titleBox{
+    display: flex;
+    width: 836px;
+    height: 50px;
+    align-items: center;
+    justify-content: center;
+
+}
+.titleH2{
+    font-family: Noto Sans KR;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 29px;
+
+    letter-spacing: -0.02em;
+}
+.rankingContent{
+    width: 836px;
+    height: 300px;
+    margin-bottom: 35px;
+    display: flex;
+    justify-content: center;
+}
+.rankBox{
+    width: 160px;
+    height: 300px;
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+
+}
+.rankBox img{
+    width: 58px;
+    height: 58px;
+}
+.rankBox img:nth-of-type(2){
+    width: 158px;
+    height: 158px;
+}
+.rankBox p{
+    width: 140px;
+    font-family: Noto Sans KR;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 17px;
+    letter-spacing: -0.02em;
+}
+.salesOfDateBox{
+    width: 836px;
+    min-height: 700px;
+    
+}
+.mpSearchArea{
+    display: flex;
+    position: relative;
+    width: 836px;
+    height: 50px;
+    align-items: center;
+    
+}
+.yearDropdown{
+
+    text-rendering: auto;
+    color: -internal-light-dark(black, white);
+    letter-spacing: normal;
+    word-spacing: normal;
+    text-transform: none;
+    text-indent: 0px;
+    text-shadow: none;
+
+    display: inline-block;
+    width: 100px;
+    height: 32px;
+    padding-left: 16px;
+    text-align: center;
+    appearance: auto;
+    box-sizing: border-box;
+    align-items: center;
+    white-space: pre;
+    -webkit-rtl-ordering: logical;
+    background-color: -internal-light-dark(rgb(255, 255, 255), rgb(59, 59, 59));
+    cursor: default;
+    margin: 0em;
+    margin-right: 10px;
+
+    border-radius: 0px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: -internal-light-dark(rgb(118, 118, 118), rgb(133, 133, 133));
+    border-image: initial;
+
+    font-family: Noto Sans KR;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 23px;
+    letter-spacing: -0.02em;
+}
+.monthDateDropdown{
+
+    text-rendering: auto;
+    color: -internal-light-dark(black, white);
+    letter-spacing: normal;
+    word-spacing: normal;
+    text-transform: none;
+    text-indent: 0px;
+    text-shadow: none;
+
+    display: inline-block;
+    width: 60px;
+    height: 32px;
+    padding-left: 16px;
+    text-align: center;
+    appearance: auto;
+    box-sizing: border-box;
+    align-items: center;
+    white-space: pre;
+    -webkit-rtl-ordering: logical;
+    background-color: -internal-light-dark(rgb(255, 255, 255), rgb(59, 59, 59));
+    cursor: default;
+    margin: 0em;
+    margin-left: 10px;
+    margin-right: 10px;
+
+    border-radius: 0px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: -internal-light-dark(rgb(118, 118, 118), rgb(133, 133, 133));
+    border-image: initial;
+
+    font-family: Noto Sans KR;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 23px;
+    letter-spacing: -0.02em;
+}
+.searchBtn {
+
+    width: 68px;
+    height: 32px;
+    margin-left: 95px;
+    background-color: #A1AD61;
+    color: white;
+    border-width: 0px;
+    border-radius: 7px;
+
+    font-family: Noto Sans KR;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 100%;
+	
+	cursor: pointer;
+	
+    align-items: center;
+    text-align: center;
+    letter-spacing: -0.5px;
+    text-transform: capitalize;
+}
+.salesOfDateTable{
+    width: 836px;
+    min-height: 230px;
+    margin-bottom: 35px;
+}
+.salesOfDateTable table{
+    font-family: Noto Sans KR;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 20px;
+
+    text-align: center;
+    letter-spacing: -0.02em;
+
+    empty-cells:hide;
+    border-collapse: collapse;
+}
+.salesOfDateTable table thead tr th{
+    background-color: #EBEBEB;
+    text-align: center;
+    width: 144px;
+    height: 50px;
+    border: 1px solid black;
+}
+.salesOfDateTable table thead tr th:nth-of-type(1){
+    width: 120px;
+    height: 50px;
+}
+.salesOfDateTable table thead tr th:nth-of-type(2){
+    width: 60px;
+    height: 50px;
+}
+.salesOfDateTable table thead tr th:nth-of-type(3){
+    width: 80px;
+    height: 50px;
+}
+.salesOfDateTable table tbody td{
+
+
+    font-family: Noto Sans KR;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 17px;
+    letter-spacing: -0.02em;
+    border: 1px solid black;
+}
+
+.salesOfMonthTable{
+    width: 836px;
+    min-height: 230px;
+    margin-bottom: 35px;
+
+}
+.salesOfMonthTable table{
+    font-family: Noto Sans KR;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 20px;
+
+    text-align: center;
+    letter-spacing: -0.02em;
+
+    empty-cells:hide;
+    border-collapse: collapse;
+}
+.salesOfMonthTable table thead tr th{
+    background-color: #EBEBEB;
+    text-align: center;
+    width: 144px;
+    height: 50px;
+    border: 1px solid black;
+}
+.salesOfMonthTable table thead tr th:nth-of-type(1){
+    width: 120px;
+    height: 50px;
+}
+.salesOfMonthTable table thead tr th:nth-of-type(2){
+    width: 140px;
+    height: 50px;
+}
+.salesOfMonthTable table tbody td{
+    font-family: Noto Sans KR;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 17px;
+    letter-spacing: -0.02em;
+    border: 1px solid black;
+}

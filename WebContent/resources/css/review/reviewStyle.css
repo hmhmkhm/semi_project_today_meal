@@ -1,0 +1,144 @@
+@charset "UTF-8";
+body {
+	text-align: center;
+	
+}
+
+a, a:hover, a:visited, a:active {
+	text-decoration: none;
+	color: #000;
+}
+
+a:hover {
+	color: #a00;
+}
+
+h1 {
+	text-align: center;
+	background-color: #fff;
+	padding: 5px;
+	margin: 0;
+}
+
+h3 {
+	text-align: center;
+}
+
+#header_review {
+	background-color: #A1AD61;
+	text-align: center;
+	width: 100%;
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+
+.sub_title {
+	text-align: center;
+}
+
+.wrap {
+	margin: 0 auto; /* 화면 가운데로 */
+	background-color: #fff;
+	box-sizing: border-box;
+}
+
+.reviewform textarea {
+	width: 700px;
+	height: 300px;
+	padding: 10px;
+	box-sizing: border-box;
+	align-items: center;
+}
+
+.rating .rate_radio {
+	position: relative;
+	display: inline-block;
+	z-index: 20;
+	opacity: 0.001;
+	width: 60px;
+	height: 60px;
+	background-color: #fff;
+	cursor: pointer;
+	vertical-align: top;
+	display: none;
+}
+
+.rating .rate_radio+label {
+	position: relative;
+	display: block;
+	float: left;
+	z-index: 10;
+	width: 60px;
+	height: 60px;
+	background-image: url(./img/starrate.png);
+	background-repeat: no-repeat;
+	background-size: 60px 60px;
+	cursor: pointer;
+}
+
+.rating .ratefill {
+	background-color: #ff8;
+	width: 0;
+	height: 60px;
+	position: absolute;
+}
+/* 이미지 담는 영역 설정*/
+#imgArea {
+	width: 360px;
+	height: 360px;
+	border: 1px solid lightgray;
+	margin: 0 auto;
+}
+
+.file_area {
+	margin : 20px
+}
+
+.cmd {
+	margin-top: 20px;
+	text-align: center;
+}
+
+#save {
+	padding: 10px 20px;
+	border-radius: 7px;
+	background-color: #A1AD61;
+	color: #fff;
+	border : 0px
+}
+
+.warning_msg {
+	display: none;
+	position: relative;
+	text-align: center;
+	background: #ffffff;
+	line-height: 26px;
+	width: 100%;
+	color: red;
+	padding: 10px;
+	box-sizing: border-box;
+	border: 1px solid #e0e0e0;
+}
+/* 별점 스타일 */
+.star {
+	display: inline-block;
+	width: 30px;
+	height: 60px;
+	cursor: pointer;
+}
+
+.star_left {
+	background: url(../../images/review/star.PNG) no-repeat 0 0;;
+	background-size: 60px;
+	margin-right: -3px;
+}
+
+.star_right {
+	background: url(../../images/review/star.PNG) no-repeat -30px 0;
+	background-size: 60px;
+	margin-left: -3px;
+}
+
+.star.on {
+	background-image: url(../../images/review/star_on.png);
+}
